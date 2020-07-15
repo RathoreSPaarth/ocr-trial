@@ -1,3 +1,9 @@
+let load = document.createElement('div')
+load.setAttribute('style','width: 100%; height: 100%; position: absolute;')
+load.innerHTML = "LOADING!"
+
+
+
 $("input").change(function(e) {
 
   for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
@@ -8,6 +14,7 @@ $("input").change(function(e) {
       var reader = new FileReader();
       reader.onloadend = function() {
            img.src = reader.result;
+           document.body.appendChild(load) 
            Tesseract.recognize(
             img.src,
             'eng',
@@ -39,6 +46,7 @@ axios({
   .then((response)=>{
     console.log(response)
     document.getElementById('a').setAttribute('href',`${response.data._links.next.href}`)
+    document.body.removeChild(load)
   })
   .catch((error)=>{
     console.log(error)
