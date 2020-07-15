@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <input type="file" accept="image/*" capture="camera">
-</body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+   
+  </head>
+  <body>
+    
+    <!-- <button onclick="read()">Submit</button> -->
+  
+    <div class="jumbotron">
+      <h1 class="display-4">Get food data by just scanning the food label</h1>
+      <p class="lead">Upload the image below and get Started</p>
+      <hr class="my-4">
+      <!-- <p>Get Started!</p> -->
+      <!-- <a class="btn btn-primary btn-lg" href="#upload" role="button">Start</a> -->
+    </div>
+
+    <!-- <div id="input-btn">
+      <input type="file" accept="image/*" capture="camera">
+    </div> -->
+    
+    <div class="input-group mb-3" id="upload">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+      </div>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile01" accept="image/*" capture="camera" aria-describedby="inputGroupFileAddon01">
+        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+      </div>
+    </div>
+
+    <a href="" id="a">Go to result</a>
+    <script src="index.js"></script>
+  </body>
 </html>
